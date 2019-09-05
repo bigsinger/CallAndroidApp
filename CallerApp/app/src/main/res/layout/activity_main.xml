@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/start_main_app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Main App (Common method)"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/start_main_app_set_referer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Main App (Set referer method 1: EXTRA_REFERRER)"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/start_main_app_set_referer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Main App (Set referer method 2: EXTRA_REFERRER_NAME)"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/start_main_app_for_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Main App (EXTRA_REFERRER + startActivityForResult)"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/start_main_app_by_scheme_uri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Main App (scheme)"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/start_main_app_by_web"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Main App (Web)"
+            android:textAllCaps="false" />
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

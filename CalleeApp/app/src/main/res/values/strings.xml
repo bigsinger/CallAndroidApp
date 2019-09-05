@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CalleeApp</string>
+    <string name="caller_name">Caller app: %1$s</string>
+</resources>

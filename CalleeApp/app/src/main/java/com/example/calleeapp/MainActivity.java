@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "CalleeApp/MainActivity";
     private TextView mTextView = null;
     private TextView tv_activity_name = null;
+    private TextView tv_info = null;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP_MR1)
     @Override
@@ -26,13 +27,35 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mTextView = findViewById(R.id.display_caller_app);
+        tv_info = findViewById(R.id.tv_info);
         tv_activity_name = findViewById(R.id.tv_activity_name);
         tv_activity_name.setText(getActivityName());
         checkCallingApp();
+        getIntentInfo();
     }
 
     protected String getActivityName() {
         return this.TAG;
+    }
+
+    // 获取通过scheme方式打开时的一些参数信息
+    private void getIntentInfo() {
+        StringBuilder sb = new StringBuilder();
+        Intent intent = getIntent();
+        if (intent != null) {
+            Uri uri = intent.getData();
+            sb.append("scheme:" + intent.getScheme() + "\n");
+            if (uri != null) {
+                sb.append("scheme: " + uri.getScheme() + "\n");
+                sb.append("host: " + uri.getHost() + "\n");
+                sb.append("port: " + uri.getPort() + "\n");
+                sb.append("path: " + uri.getPath() + "\n");
+                sb.append("queryString: " + uri.getQuery() + "\n");
+                sb.append("queryParameter: " + uri.getQueryParameter("key") + "\n");
+            }
+        }
+
+        tv_info.setText(sb.toString());
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP_MR1)

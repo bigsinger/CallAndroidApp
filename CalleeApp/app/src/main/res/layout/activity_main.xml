@@ -24,6 +24,11 @@
             android:text="@string/caller_name"
             android:textSize="18sp"
             android:textColor="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
